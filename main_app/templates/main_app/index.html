@@ -1,0 +1,47 @@
+{% extends 'main_app/base.html' %}
+
+{% block main %}
+
+	{% if user.is_authenticated %}
+		<table class="table">
+			<thead class="thead">
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			
+			<tbody class="tbody">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	
+		<form class="update_form" action="/" method='POST'>
+			<input id="update_input" name="update_input" type="hidden">
+			<button id="update_button" name="update_button" type="submit" class="btn btn-outline-success">Обновить</button>
+		</form>
+		
+	{% else %}
+	
+		<div class="form">
+			<form action="/" method='POST' class="form-group">
+				{{ form.as_p }}
+				{% csrf_token %}
+				<button class="btn btn-outline-success" type="submit">OK</button>
+			</form>
+		</div>
+		
+		{% if error %}
+			<h6 class="error">{{ error }}</h6>
+		{% endif %}
+		
+	{% endif %}
+
+{% endblock %}

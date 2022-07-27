@@ -1,0 +1,26 @@
+<table class="table">
+	<thead class="thead">
+		<tr>
+			<th>Фото</th>
+			<th>Заголовок</th>
+			<th>Цена</th>
+			<th>Удалить</th>
+		</tr>
+	</thead>
+			
+	<tbody class="tbody">
+		{% for add in ads %}
+			<tr>
+				<td><img src="{{ add.0 }}"></td>
+				<td>{{ add.1 }}</td>
+				<td>{{ add.2 }}</td>
+				<td>
+					<form class="delete_form" action="/" method='POST'>
+						<input id="delete_input" name="delete_input" type="hidden">
+						<button id="delete_button" name="delete_button" type="submit" class="btn btn-outline-success">Удалить</button>
+					</form>
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+<table>

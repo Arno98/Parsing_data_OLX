@@ -1,0 +1,25 @@
+.form, .update_form {
+	width: 300px;
+	margin: 100px auto;
+}
+
+.form p input {
+	border-radius: 10px;
+}
+
+form p label, form p input {
+	text-align: center;
+}
+
+.btn {
+	width: 100%;
+}
+
+.btn {
+	border-radius: 50px;
+}
+
+.error {
+	text-align: center;
+}
+
